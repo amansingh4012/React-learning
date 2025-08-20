@@ -2,9 +2,9 @@ import React, {useEffect, useState } from 'react'
 import { useTodo } from '../context/TodoContext'
 
 function TodoItem({ todo }) {
-    const {isTodoEditable, setIsTodoEditable} = useState(false);
+    const [isTodoEditable, setIsTodoEditable] = useState(false);
     const [todoMsg, setTodoMsg] = useState(todo.todo)
-    const {updateTodo, deleteTodo, toggleComplete} = useTodo;
+    const {updateTodo, deleteTodo, toggleComplete} = useTodo();
 
     const editTodo = () => {
       updateTodo(todo.id, {...todo, todo: todoMsg})
@@ -49,7 +49,7 @@ function TodoItem({ todo }) {
                 }}
                 disabled={todo.completed}
             >
-                {isTodoEditable ? "📁" : "✏️"}
+                {isTodoEditable ? "💾" : "✏️"}
             </button>
             {/* Delete Todo Button */}
             <button

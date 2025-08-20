@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -14,7 +14,7 @@ function App() {
     }
 
     const updateTodo = (id, todo) => {
-        SetTodos((prev) => prev.mmap((prevTodo)=> (prevTodo.id 
+        SetTodos((prev) => prev.map((prevTodo)=> (prevTodo.id 
             === id ? todo : prevTodo)))
 
     }
@@ -24,7 +24,7 @@ function App() {
     }
 
     const toggleComplete = (id) => {
-        SetTodos((prev) => prev.map((prevTodo) => prevTodo ===
+        SetTodos((prev) => prev.map((prevTodo) => prevTodo.id ===
     id? {...prevTodo, completed: !prevTodo.completed} : 
     prevTodo))
     }

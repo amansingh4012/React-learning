@@ -1,4 +1,4 @@
-import React, {use, useState} from 'react'
+import React, {useState} from 'react'
 import {useTodo } from '../context/TodoContext'
 
 function TodoForm() {
@@ -10,12 +10,12 @@ function TodoForm() {
     e.preventDefault();
 
     if (!todo) return; // Prevent adding empty todos
-    addTodo(todo); // Pass the boolean value false directly
+    addTodo({todo: todo, completed: false}); // Pass the object with todo and completed properties
     setTodo(''); // Clear input after adding
   }
 
     return (
-        <form   onSubmit = {add} className="flex">
+        <form onSubmit={add} className="flex">
             <input
                 type="text"
                 value={todo}
@@ -31,4 +31,3 @@ function TodoForm() {
 }
 
 export default TodoForm;
-
